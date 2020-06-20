@@ -23,13 +23,6 @@ io.on('connection', socket => {
             return callback(error);
         }
 
-        /**
-         * 'message' = admin generated messages' event
-         * 'sendMessage' = user generated messages' event
-         * emit = send event from server to client
-         * on = expect event to server from client after emitting from frontend
-         */
-
         // message only to the user, who joined the room
         socket.emit('message', {
             user: 'admin',
